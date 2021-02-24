@@ -25,7 +25,7 @@ class RulesApplier extends  \Magento\SalesRule\Model\RulesApplier
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
         $dataHelper = $objectManager->create(\MW\MaximumCouponDiscount\Helper\Data::class);
         $isEnabled = $dataHelper->isEnabled();
-        $discountData = $this->getDiscountData($item, $rule);
+        $discountData = $this->getDiscountData($item, $rule, $address);
 
         $maxDiscount = $rule->getMaxDiscount();
         $simpleAction = $rule->getSimpleAction();
